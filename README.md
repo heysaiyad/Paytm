@@ -17,3 +17,4 @@ crate the token and listen the port 3000
     4. late me update firstname, lastname and password in my database
 6. Add middleware - which  lets the user send the right token or not 
 and if they have decoded and let the request flow stop the flow and return back 403.
+7. create bank related Schema
