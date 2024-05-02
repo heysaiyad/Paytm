@@ -1,6 +1,8 @@
+
+// backend/db.js
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://mrsaiyad62:s0ItH6FMhqc4JbWq@todocluster.elqvkzo.mongodb.net/paytmdb");
+mongoose.connect("mongodb+srv://mrsaiyad62:s0ItH6FMhqc4JbWq@todocluster.elqvkzo.mongodb.net/paytmdb")
 
 // Create a Schema for Users
 const userSchema = new mongoose.Schema({
@@ -32,13 +34,6 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-// Create a model from the schema
-const User = mongoose.model('User', userSchema);
-
-module.exports = {
-	User
-};
-
 const accountSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId, // Reference to User model
@@ -52,48 +47,9 @@ const accountSchema = new mongoose.Schema({
 });
 
 const Account = mongoose.model('Account', accountSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = {
-	Account
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-//👀 Ugly Solution
-// mongoDB Connetion
-mongoose.connect("mongodb+srv://mrsaiyad62:s0ItH6FMhqc4JbWq@todocluster.elqvkzo.mongodb.net/paytmdb")
-
-// User Schema
-const userSchema = new Schema({
-    firstname:String,
-    lastname:String,
-    username:String,
-    password:String
-})
-
-// Model
-const User = mongoose.model('User', userSchema );
-
-module.exports = {User};
-*/
+	User,
+    Account
+};
