@@ -15,6 +15,10 @@ app.use("/api/v1", rootRouter);
 //     console.log("3000");
 // });
 
+app.get("/", function(req, res){
+    res.send("Hi Here");
+})
+
 
 app.listen(config.PORT, () => {
   console.log('serve at http://localhost:3000');
