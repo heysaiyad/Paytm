@@ -1,8 +1,14 @@
 
 // backend/db.js
 const mongoose = require('mongoose');
+const config = require('./config');
 
-mongoose.connect("mongodb+srv://mrsaiyad62:s0ItH6FMhqc4JbWq@todocluster.elqvkzo.mongodb.net/paytmdb")
+mongoose.connect(config.MONGODB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('Database connected!'))
+.catch(err => console.log(err));
 
 // Create a Schema for Users
 const userSchema = new mongoose.Schema({
